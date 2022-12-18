@@ -1,0 +1,3 @@
+(test
+ (name euler1)
+ (libraries collection recursion tailrecursion))

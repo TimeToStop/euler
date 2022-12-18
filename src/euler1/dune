@@ -1,0 +1,17 @@
+(library
+ (name collection)
+ (wrapped false)
+ (modules collection)
+ (libraries ))
+
+(library
+ (name recursion)
+ (wrapped false)
+ (modules recursion)
+ (libraries ))
+
+ (library
+ (name tailrecursion)
+ (wrapped false)
+ (modules tailrecursion)
+ (libraries ))

@@ -1,0 +1,4 @@
+*.txt
+*.opam
+
+_build/**
