@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: ocaml/setup-ocaml@v2
       with:
-        ocaml-version: ${{ '4.06.2' }}
+        ocaml-compiler: ${{ '4.06.2' }}
     - name: Dependencies
       run: opam install -t . --deps-only
     - name: Build
