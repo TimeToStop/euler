@@ -20,6 +20,10 @@ jobs:
     - uses: ocaml/setup-ocaml@v2
       with:
         ocaml-compiler: 4.14.x
+    - name: Dune
+      run: opam install dune
+    - name: Config
+      run: eval $(opam config env)
     - name: Dependencies
       run: opam install -t . --deps-only
     - name: Build
