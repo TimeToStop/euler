@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ocaml:22.0.7
+      image: ubuntu:22.0.7
 
     steps:
     - uses: actions/checkout@v3
