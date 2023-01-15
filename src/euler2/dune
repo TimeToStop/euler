@@ -1,0 +1,11 @@
+(library
+ (name collection2)
+ (wrapped false)
+ (modules collection2)
+ (libraries ))
+
+(library
+ (name recursion2)
+ (wrapped false)
+ (modules recursion2)
+ (libraries ))

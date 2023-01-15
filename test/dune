@@ -1,3 +1,9 @@
 (test
  (name euler1)
- (libraries collection recursion tailrecursion))
+ (modules euler1)
+ (libraries ounit2 collection recursion tailrecursion))
+
+(test
+ (name euler2)
+ (modules euler2)
+ (libraries ounit2 recursion2 collection2))

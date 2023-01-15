@@ -19,4 +19,4 @@
  (name euler)
  (synopsis "Lab1")
  (description "Functional programming first lab in OCaml")
- (depends ocaml dune))
+ (depends ocaml dune ounit2))
