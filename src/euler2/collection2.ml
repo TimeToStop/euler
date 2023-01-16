@@ -1,15 +1,15 @@
-let rec generate_reversed_fibbonachi_list_impl size a b = 
+let rec generate_fibbonachi_list_impl size a b = 
   match size with
   | 0 -> []
-  | n -> (a + b) :: generate_reversed_fibbonachi_list_impl (n - 1) b (a + b)
+  | n -> (a + b) :: generate_fibbonachi_list_impl (n - 1) b (a + b)
 ;;
 
-let generate_reversed_fibbonachi_list size = 
+let generate_fibbonachi_list size = 
   match size with
   | 0 -> []
   | 1 -> [ 1 ]
   | 2 -> [ 1; 1 ]
-  | n -> 1 :: 1 :: generate_reversed_fibbonachi_list_impl (n - 2) 1 1
+  | n -> 1 :: 1 :: generate_fibbonachi_list_impl (n - 2) 1 1
 
 let rec map list f =
   match list with
@@ -45,12 +45,12 @@ let find_number_with_digits seq target_digits =
 ;;
 
 let rec find_fib_with_target_digits n target_digits = 
-  let fib = generate_reversed_fibbonachi_list n in 
+  let fib = generate_fibbonachi_list n in 
     let index = find_number_with_digits fib target_digits in 
       if index = -1 then
         find_fib_with_target_digits (2 * n) target_digits
       else
-        index
+        1 + index
 ;;
 
-let euler2 n = 1 + find_fib_with_target_digits 1 n ;;
+let euler2 n = find_fib_with_target_digits 1 n ;;

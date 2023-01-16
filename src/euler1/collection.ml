@@ -13,11 +13,6 @@ let rec map list f =
   | head :: tail -> f(head) :: map tail f
 ;;
 
-let rec print_list = function
-[] -> ()
-| e::l -> print_int e ; print_string " " ; print_list l ;;
-
-
 let rec sum list = 
   match list with
   | [] -> 0
