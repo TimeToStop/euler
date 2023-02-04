@@ -2,16 +2,16 @@
  (name collection)
  (wrapped false)
  (modules collection)
- (libraries ))
+ (libraries))
 
 (library
  (name recursion)
  (wrapped false)
  (modules recursion)
- (libraries ))
+ (libraries))
 
- (library
+(library
  (name tailrecursion)
  (wrapped false)
  (modules tailrecursion)
- (libraries ))
+ (libraries))

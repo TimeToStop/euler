@@ -1,3 +1,3 @@
-open! Collection ;;
+open! Collection
 
-let () = print_int (Collection.euler1 100) ;;
+let () = print_int (Collection.euler1 100)
