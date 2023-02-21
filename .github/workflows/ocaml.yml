@@ -30,7 +30,7 @@ jobs:
 
   lint:
     name: Lint
-    depends: install
+    needs: install
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +39,7 @@ jobs:
 
   build:
     name: Build
-    depends: [install, lint]
+    needs: [install, lint]
     runs-on: ubuntu-latest
 
     steps:
@@ -48,7 +48,7 @@ jobs:
   
   test:
     name: Test
-    depends: [install, lint, build]
+    needs: [install, lint, build]
     runs-on: ubuntu-latest
 
     steps:
