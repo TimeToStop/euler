@@ -11,8 +11,8 @@ permissions:
 
 jobs:
 
-  install:
-    name: Install
+  run:
+    name: Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -20,37 +20,13 @@ jobs:
     - uses: ocaml/setup-ocaml@v2
       with:
         ocaml-compiler: 4.14.x
-    - name: Build
+    - name: test
       run: |
        opam install dune
        eval $(opam config env)
        opam install -t . --deps-only
        opam install ounit2.2.2.6
        opam install ocamlformat
-
-  lint:
-    name: Lint
-    needs: install
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Linting
-      run:  opam exec -- dune fmt
-
-  build:
-    name: Build
-    needs: [install, lint]
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Build
-      run: opam exec -- dune build
-  
-  test:
-    name: Test
-    needs: [install, lint, build]
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Test
-      run: opam exec -- dune runtest
+       opam exec -- dune fmt
+       opam exec -- dune build
+       opam exec -- dune runtest
