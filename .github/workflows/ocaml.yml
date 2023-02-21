@@ -11,8 +11,8 @@ permissions:
 
 jobs:
 
-  run:
-    name: Build
+  install:
+    name: Install
     runs-on: ubuntu-latest
 
     steps:
@@ -27,18 +27,30 @@ jobs:
        opam install -t . --deps-only
        opam install ounit2.2.2.6
        opam install ocamlformat
-       opam exec -- dune build
 
-   run:
+  lint:
     name: Lint
+    depends: install
     runs-on: ubuntu-latest
 
     steps:
     - name: Linting
       run:  opam exec -- dune fmt
+  
 
-   run:
+
+  build:
+    name: Build
+    depends: [install, lint]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build
+      run: opam exec -- dune build
+  
+  build:
     name: Test
+    depends: [install, lint]
     runs-on: ubuntu-latest
 
     steps:
