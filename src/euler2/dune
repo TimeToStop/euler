@@ -9,3 +9,9 @@
  (wrapped false)
  (modules recursion2)
  (libraries))
+
+(library
+ (name pattern2)
+ (wrapped false)
+ (modules pattern2)
+ (libraries))

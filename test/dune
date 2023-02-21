@@ -6,4 +6,4 @@
 (test
  (name euler2)
  (modules euler2)
- (libraries ounit2 recursion2 collection2))
+ (libraries ounit2 recursion2 collection2 pattern2))

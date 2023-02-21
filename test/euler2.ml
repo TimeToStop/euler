@@ -1,6 +1,7 @@
 open! OUnit2
 open! Collection2
 open! Recursion2
+open! Pattern2
 
 let answers = [1; 7; 12; 17; 21; 26; 31; 36; 40; 45]
 
@@ -15,9 +16,12 @@ let test_collection _ = test_any 1 answers Collection2.euler2
 
 let test_recursion _ = test_any 1 answers Recursion2.euler2
 
+let test_pattern _ = test_any 1 answers Pattern2.euler2
+
 let test_euler_2 =
   "test_euler_2"
   >::: [ "test_collection" >:: test_collection
-       ; "test_recursion" >:: test_recursion ]
+       ; "test_recursion" >:: test_recursion
+       ; "test_pattern" >:: test_pattern ]
 
 let () = run_test_tt_main test_euler_2
