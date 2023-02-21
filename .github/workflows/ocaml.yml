@@ -36,8 +36,6 @@ jobs:
     steps:
     - name: Linting
       run:  opam exec -- dune fmt
-  
-
 
   build:
     name: Build
@@ -48,9 +46,9 @@ jobs:
     - name: Build
       run: opam exec -- dune build
   
-  build:
+  test:
     name: Test
-    depends: [install, lint]
+    depends: [install, lint, build]
     runs-on: ubuntu-latest
 
     steps:
